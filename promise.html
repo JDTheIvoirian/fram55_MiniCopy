@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function wait() {
+            const t = Date.now()
+            while(Date.now() - t < duration) {}
+        } 
+
+        console.log('bonjour')
+        //wait(1000)
+        setInterval(() => {
+            console.log('les gens')
+        }, 1000)
+
+        const p1 = prompt('entrez un nom svp')
+
+        //exercice
+
+        function decompte(n){
+            console.log(n)
+            setTimeout(() => {
+                decompte(n - 1)
+            },1000)
+        }
+
+        decompte(4)
+
+        //promise faire des promesses
+
+        const p = new Promise((resolve, reject) => {
+            resolve(4)
+        })
+        p.then((n) => {
+            console.log('le nombre', n)
+            return 7
+        }).then((n) => {
+            console.log('ne nombre 2', n)
+        }).catch((e) => {
+            console.log('Echec', e)
+        })
+    </script>
+</body>
+</html>
